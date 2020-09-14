@@ -1,0 +1,77 @@
+uryotruck
+
+    user
+
+        id(VARCHAR(45))
+            고객의 ID
+            PK
+            NOT NULL 
+        password(VARCHAR(45))
+            고객의 Password
+            NOT NULL
+        phone_number(VARCHAR(45))
+            고객의 연락처
+            NOT NULL
+        car_id(INT)
+            고객의 차량id (RaspberryPi id)
+            default = NULL
+            화물을 맡기는 기업은 NULL
+
+    deliverylist
+
+        delivery_id(INT(11))
+            PK
+            Auto Increase
+            NOT NULL
+            배송 정보의 id (자동으로 생성)
+
+        company_id(VARCHAR(45))
+            화물을 맡기려는 고객의 id
+            Foreign Key
+            NOT NULL
+
+        pay(INT(11))
+            지불 금액
+            NOT NULL
+
+        paret_count(INT(11))
+            화물 요청하려는 파레트의 수
+            NOT NULL
+
+        paret_weight(INT(11))
+            화물 요청하려는 파레트의 무게
+            NOT NULL
+
+        content_type(INT(11))
+            배송을 맡기려는 물건의 유형
+            0 = 일반
+            1 = 냉장
+            2 = 냉동
+            default = 0
+
+        content_lat(Float (10,6))      
+            현재위도
+            NOT NULL
+
+        content_lat(Float (10,6))      
+            현재경도
+            NOT NULL
+
+        content_lat(Float (10,6))      
+            목적지위도
+            NOT NULL
+
+        content_lat(Float (10,6))      
+            목적지경도
+            NOT NULL
+
+        delivery_type(INT(11))
+            배송 상태
+            0 = 대기중
+            1 = 배송중
+            2 = 배송완료
+
+        driver_id(VARCHAR(45))
+            배송하는 차주의 id
+            delivery_type = 0이 아니면 할당
+            default = NULL

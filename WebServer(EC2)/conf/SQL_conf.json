@@ -1,0 +1,7 @@
+{
+  "sdb_host": "database-1.c6kurvxnjviu.ap-northeast-2.rds.amazonaws.com",
+  "sdb_user": "root",
+  "sdb_password": "rootroot",
+  "sdb_port": "3306",
+  "sdb_database": "uryotruck"
+}
